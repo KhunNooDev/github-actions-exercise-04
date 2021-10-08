@@ -28,10 +28,6 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
-  docker:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - run: docker build --tag node-docker .
   deploy:
     needs: build
